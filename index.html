@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF8">
+	<title>D3 Examples</title>
+	<script src="bower_components/d3/d3.js"></script>
+	<style type="text/css">
+		div.bar {
+			display: inline-block;
+			width: 20px;
+			height: 75px;
+			background-color: black; 
+			margin-right: 2px;
+		}
+	</style>
+</head>
+<body>
+
+  <script type="text/javascript">
+
+  			// Very exciting data about facinating things
+  			var dataset = [];
+
+            // Generate random data
+            for(var i = 0; i < 25; ++i){
+            	dataset.push(Math.random() * 30);
+            }
+            //d3 will be in scope
+            d3.select('body').selectAll('div')
+            .data(dataset)
+            // Enter creates a placeholder for missing elements
+            .enter()
+            .append('div')
+            .attr('class', 'bar')
+            .style('height', function(d){
+
+            	var barHeight = d * 5; // Scale up * 5
+            	return barHeight + 'px';
+            });
+  </script>
+</body>
+</html>
