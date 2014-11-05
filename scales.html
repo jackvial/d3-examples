@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF8">
+	<title>D3 Scales</title>
+	<script src="bower_components/d3/d3.js"></script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+
+  // Apples sold per month
+  var dataset = [ 100, 200, 300, 400, 500 ];
+
+  // Set scale type, domain(input), range(output)
+  var scale = d3.scale.linear()
+                      .domain([100, 500])
+                      .range([10, 350]);
+
+  console.log(scale(120));
+
+
+</script>
+</body>
+</html>
